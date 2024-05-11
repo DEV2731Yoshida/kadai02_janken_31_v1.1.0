@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample.css">
+    <title>じゃんけんゲーム</title>
+</head>
+
+<body>
+
+    <header>
+        <h4>おすすめの植物情報</h4>
+    </header>
+
+    <main style="display:none;">
+        <h5>気になる内容を押してください</h5>        
+
+        <ul>
+            <li id="gu_btn">植物育て方のコツ</li>
+            <li id="choki_btn">お勧め観葉植物</li>
+            <li id="pa_btn">お勧めのZASSO</li>
+        </ul>
+
+        <div>
+            <span id="pc_hands"></span>
+        </div>
+
+        <h4>今回は、この植物情報をお伝えしました</h4>
+
+        <div id="judgment"></div>
+    </main>
+
+    <footer></footer>
+
+
+
+
+    <!-- ここからがじゃんけんの中身 -->
+    <script>
+    $("main").slideDown(500);
+
+
+    // 植物育て方のコツ を押した場合
+    $("#gu_btn").on("click",function(){
+        const g = Math.ceil(Math.random()*3);
+        let guvs = "";
+        if(g==1){
+            guvs = "鉢植え植物の灌水方法：ジャブジャブ⇔カラカラの法則で行う。毎日ちびちびが最もダメ。灌水を行う際は、ウォータースペース（鉢上部の空間）が池のように溜まるまで水量を入れ、水が引いたらもう一度同じ水量を与える。引いたらさらにもう一度。これが１回の灌水です。";
+        }
+        else if(g==2){
+            guvs = "観葉植物にお勧めの肥料：固形ならプロミック観葉植物用、液体ならハイポネックス ハイグレード観葉植物。";
+        }
+        else{
+            guvs = "植物管理でよく言われる「半日陰」とは：直射日光は当たらないが明るい場所、つまり明るい日陰のこと。";
+        }
+
+    $("#pc_hands").html(guvs);
+
+    })
+
+
+    // お勧め観葉植物 を押した場合
+    $("#choki_btn").on("click",function(){
+        const c = Math.ceil(Math.random()*3);
+        let chokivs = "";
+        if(c==1){
+            chokivs = '<img src="img/san.jpg" height="230">';
+            any = "サンスベリア・バキュラリスです。アフリカ原産、花言葉は永久。空気清浄効果が高い。夜間も絶えず酸素を放出し続けることから、ベッドルームプラントとも呼ばれる。冬の寒い室内では水やり月１回でよいので楽。";
+        }
+        else if(c==2){
+            chokivs = '<img src="img/umb.jpg" height="230">';
+            any = "ウンベラータです。Umbellataはアンブレラ、つまり傘の意味。広い葉や枝ぶりに高級感がある。ブティックや百貨店など、様々な場所で採用されている。花言葉は永久の幸せ。";
+        }
+        else{
+            chokivs = '<img src="img/sel.jpg" height="230">';
+            any = "セロームです。花言葉は愛の木。幹の模様がユニークで、大きく育つ。写真は、沖縄から横浜まで引っ張ってきた一品。";
+        }
+
+    $("#pc_hands").html(chokivs);
+
+    $("#judgment").html(any);
+
+    })
+
+
+    // お勧めZASSO を押した場合
+    $("#pa_btn").on("click",function(){
+        const p = Math.ceil(Math.random()*3);
+        let pavs = "";
+        if(p==1){
+            pavs = '<img src="img/tam.jpg" height="230">';
+            any = "タンポポは花を見るだけでなく、外来種問題など様々なことが学べます。また、タンポポコーヒーも美味しく、多くのドラッグストアに置いています。";
+        }
+        else if(p==2){
+            pavs = '<img src="img/tm9.jpg" height="230">';
+            any = "現在、最もお勧めの芝生は、ＴＭ９です。トヨタ自動車が開発した品種で、綺麗で強くて管理が楽。具体的には緑色が濃く、草丈が従来芝生の半分、芝刈りは最低年１回です（通常の芝生は年３回以上）。";
+        }
+        else{
+            pavs = '<img src="img/mug.jpg" height="230">';
+            any = "ヨモギは多くの効能があり、漢方では艾葉［がいよう］と呼ばれている。昔から民間薬としても親しまれている。眼精疲労、止血、保温、神経痛、骨粗鬆症など多くに対して効果がある。";
+        }
+
+    $("#pc_hands").html(pavs);
+
+    $("#judgment").html(any);
+
+    })
+    
+    </script>
+    <!-- ここまでがじゃんけんの中身 -->
+
+
+
+
+    <!-- いやーーーー、むじーーけど楽しーーーー！！！！！！！ 　スーパーの寿司を喰らいながらのZASSO-->
+</body>
+
+</html>
